@@ -36,7 +36,7 @@
 
 <#-- TABLE RENDERING THE SERVICES -->
 <div>
-    <table id="servicesTable">
+    <table id="servicesTable" class="table">
         <tr>
             <th>id</th>
             <th>name</th>

@@ -5,18 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/filesStyle.css">
+    <title>Upload A File</title>
 </head>
 <body>
-<div>
-    <input type="file" id="file" name="file" accept="image/*" placeholder="File here"/>
+
+<h1>Upload A New File</h1>
+<div class="form-div">
+    <input class="file-input" type="file" id="file" name="file" accept="image/*" placeholder="File here"/>
     <input type="hidden" id="file_hidden">
     <button onclick="sendFile()">
         Upload
     </button>
     <div class="filename"></div>
 </div>
-<div id="photo">
+<div class="img-div">
+    <img id="photo" src="#">
 </div>
 
 <script src="/js/filesUpload.js"></script>

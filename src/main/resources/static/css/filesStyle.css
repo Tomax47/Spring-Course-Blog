@@ -1,0 +1,52 @@
+
+img {
+    opacity: 0;
+    width: 800px;
+    height: 800px;
+}
+
+.img-div {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+}
+
+.form-div {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: crimson;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+button {
+    width: 6rem;
+    height: 3rem;
+    color: #fff;
+    background-color: crimson;
+    font-weight: 400;
+    font-size: .9rem;
+    border: none;
+    border-radius: 20px;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    transition: opacity 2s;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: .9;
+    background-color: #cb0f33;
+}

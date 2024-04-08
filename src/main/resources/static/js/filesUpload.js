@@ -34,7 +34,8 @@ function sendFile() {
     })
         .done(function (response) { // Per successful request
             let fileUrl = 'http://localhost:8080/files/' + response;
-            $('#photo').append('<img src = "' + fileUrl + '"/>');
+            $('#photo').attr('src', fileUrl);
+            $('#photo').css('opacity', 1);
         })
         .fail(function () { // Failure case "Popping up alert modal"
             //Something went wrong! Could not upload the file

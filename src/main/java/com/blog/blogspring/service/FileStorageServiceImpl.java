@@ -3,11 +3,13 @@ package com.blog.blogspring.service;
 import com.blog.blogspring.model.FileInfo;
 import com.blog.blogspring.repository.FileInfoRepo;
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -52,7 +54,24 @@ public class FileStorageServiceImpl implements FileStorageService {
     }
 
     @Override
-    public void writeFileToResponse(String fileName, HttpServletResponse response) {
-        // TODO: IMPLEMENT THE LOGIC
+    public void writeFileToResponse(String fileStorageName, HttpServletResponse response) {
+        FileInfo fileInfo = fileInfoRepo.findByFileStorageName(fileStorageName);
+
+        /**
+         This line sets the content type of the HTTP response to the type of the file being written.
+         The content type is a MIME type that tells the client what kind of data is being sent in the response
+         */
+        response.setContentType(fileInfo.getType());
+        try {
+            /**
+             In this line, we write the content of the HTTP response we are sending to the client!
+             The IOUtils.copy() method, writes content from an input stream "which is the new FileInputStream" with the content of "file url"
+             in our case, to the HTTP response outputStream!
+             */
+            IOUtils.copy(new FileInputStream(fileInfo.getUrl()),
+                    response.getOutputStream());
+        } catch (IOException e) {
+            throw new IllegalArgumentException(e);
+        }
     }
 }

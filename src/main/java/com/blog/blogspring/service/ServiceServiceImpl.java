@@ -61,4 +61,9 @@ public class ServiceServiceImpl implements ServiceService{
 
         return ServiceDto.from(papersPage.getContent());
     }
+
+    @Override
+    public List<ServiceDto> getAllServices() {
+        return ServiceDto.from(serviceRepo.findAll());
+    }
 }

@@ -33,30 +33,32 @@
     <button class="button" id="addServiceBtn">Add Service</button>
 </div>
 
+
+<#-- TABLE RENDERING THE SERVICES -->
+<div>
+    <table id="servicesTable">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>cost</th>
+            <th>date</th>
+        </tr>
+        <#list servicesList as services>
+            <tr>
+                <td>${services.id}</td>
+                <td>${services.name}</td>
+                <td>${services.cost}</td>
+                <td>${services.date}</td>
+            </tr>
+        </#list>
+    </table>
+</div>
+
 <script src="/js/services.js"></script>
 <script
         src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous"></script>
-
-<#--<div>-->
-<#--    <table id="table">-->
-<#--        <tr>-->
-<#--            <th>id</th>-->
-<#--            <th>name</th>-->
-<#--            <th>cost</th>-->
-<#--            <th>date</th>-->
-<#--        </tr>-->
-<#--        <#list servicesList as services>-->
-<#--            <tr>-->
-<#--                <td>${services.id}</td>-->
-<#--                <td>${services.name}</td>-->
-<#--                <td>${services.cost}</td>-->
-<#--                <td>${services.date}</td>-->
-<#--            </tr>-->
-<#--        </#list>-->
-<#--    </table>-->
-<#--</div>-->
 </body>
 
 </html>

@@ -6,6 +6,7 @@ import com.blog.blogspring.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +28,14 @@ public class ServiceController {
 
     @GetMapping("/services")
     public String serviceForm(Model model) {
+        model.addAttribute("servicesList", serviceService.getAllServices());
         return "services";
+    }
+
+    @GetMapping("/allServices")
+    @ResponseBody
+    public ResponseEntity<List<ServiceDto>> getAllServices() {
+        return ResponseEntity.ok(serviceService.getAllServices());
     }
 
     @PostMapping("/paper/service/search")

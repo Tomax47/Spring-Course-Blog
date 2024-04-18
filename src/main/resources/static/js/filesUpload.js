@@ -1,5 +1,14 @@
 
+// FILE UPLOAD PAGE
 let alertMessage;
+let fileInput = document.getElementById('file');
+
+addEventListener(`change`, function () {
+    fileInput.files.length > 0
+        ? fileInput.style.backgroundColor = "#00ce4f"
+        : fileInput.style.backgroundColor = fileInput.style.getPropertyValue("background-color");
+});
+
 function ThrowAlert (message, exec) { // Preventing double error modal from popping up
     exec === true ? alert(message) :  alertMessage = message;
     alertMessage.length > 0 ? alertMessage = "Something went wrong! Could not upload the file" : alertMessage; // Default error msg "Unknown error"

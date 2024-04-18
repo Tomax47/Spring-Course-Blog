@@ -1,11 +1,50 @@
 
 h1 {
-    margin: 1rem;
-    color: crimson;
     display: flex;
+    align-content: center;
     align-items: center;
     justify-content: center;
-    align-content: center;
+    color: crimson;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10rem;
+}
+
+button {
+    width: 6rem;
+    height: 3rem;
+    color: #fff;
+    background-color: crimson;
+    font-weight: 400;
+    font-size: .9rem;
+    border: none;
+    border-radius: 20px;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    transition: opacity 2s;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: .9;
+    background-color: #cb0f33;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 10px;
+}
+
+input {
+    width: 10rem;
+    height: 2rem;
+    font-size: .8rem;
+    font-weight: 400;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
 .search-btn {
@@ -19,12 +58,25 @@ h1 {
 }
 
 .form-container {
-    padding: .5rem;
-    margin: 1rem 0 1rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    align-content: center;
+    background-color: #0494d2;
+    border-radius: 15px;
+    padding: .75rem;
+    margin: 1rem 0 2rem 0;
+    width: 70%;
+    justify-self: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    padding: 25px;
 }
 
 .table {

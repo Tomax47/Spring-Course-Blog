@@ -12,27 +12,32 @@
 
 <!-- ADDING A SERVICE -->
 <h1>Add Services</h1>
-<div class="form-container">
-    <label><b>Name</b></label>
-    <input
-            type="text"
-            id="name"
-            placeholder="Name">
-
-    <label><b>Cost</b></label>
-    <input
-            type="text"
-           id="cost"
-           placeholder="Cost">
-
-    <label><b>Time</b></label>
-    <input
-            type="text"
-            id="date"
-            placeholder="Time">
-    <button class="button" id="addServiceBtn">Add Service</button>
+<div class="container">
+    <div class="form-container">
+        <div class="input-container">
+            <label><b>Name</b></label>
+            <input
+                    type="text"
+                    id="name"
+                    placeholder="Name">
+        </div>
+        <div class="input-container">
+            <label><b>Cost</b></label>
+            <input
+                    type="text"
+                    id="cost"
+                    placeholder="Cost">
+        </div>
+        <div class="input-container">
+            <label><b>Time</b></label>
+            <input
+                    type="text"
+                    id="date"
+                    placeholder="Time">
+        </div>
+        <button class="button" id="addServiceBtn">Add Service</button>
+    </div>
 </div>
-
 
 <#-- TABLE RENDERING THE SERVICES -->
 <div>

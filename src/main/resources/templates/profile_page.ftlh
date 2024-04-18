@@ -11,5 +11,6 @@
 <h1>Welcome ${userName}!</h1>
 
 <a href="/users/${userId}/articles">Show My Articles</a>
+<a href="/users/articles">Discover Others' Articles</a>
 </body>
 </html>

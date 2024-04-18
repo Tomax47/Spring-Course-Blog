@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -73,5 +74,15 @@ public class FileStorageServiceImpl implements FileStorageService {
         } catch (IOException e) {
             throw new IllegalArgumentException(e);
         }
+    }
+
+    @Override
+    public FileInfo findByStorageName(String storageName) {
+        return fileInfoRepo.findByFileStorageName(storageName);
+    }
+
+    @Override
+    public FileInfo findById(Long id) {
+        return fileInfoRepo.findById(id).get();
     }
 }

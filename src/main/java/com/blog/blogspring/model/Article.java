@@ -33,4 +33,9 @@ public class Article {
             joinColumns = @JoinColumn(name = "articleId", referencedColumnName = "articleId"), // First table joinColumns
             inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id")) // Second table inverseJoinColumns "The user id"
     private List<User> likes; // In the inverseJoinColumns, it gets that it needs to get the id field from the User cuz in the private List<User> likes we specified a list of User objects
+
+    // TODO: FINISH IT UP!
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private FileInfo image;
 }

@@ -13,17 +13,22 @@ public class ArticleDto {
     private String text;
     private String authorName;
     private Integer likesCount;
+    private String imageUrl;
 
     public static ArticleDto from(Article article) {
         Integer count = 0;
         if (article.getLikes() != null) {
             count = article.getLikes().size();
         }
+
+        String imageUrl = "http://localhost:8080/files/"+article.getImage().getFileStorageName();
+
         return ArticleDto.builder()
                 .id(article.getArticleId())
                 .text(article.getText())
                 .authorName(article.getAuthor().getEmail())
                 .likesCount(count)
+                .imageUrl(imageUrl)
                 .build();
     }
 

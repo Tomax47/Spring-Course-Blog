@@ -1,6 +1,7 @@
 
 img {
     opacity: 0;
+    border-radius: .6rem;
     width: 800px;
     height: 800px;
 }
@@ -29,6 +30,7 @@ h1 {
     color: crimson;
     font-size: 4rem;
     font-weight: 700;
+    margin-bottom: 10rem;
 }
 
 button {
@@ -49,4 +51,51 @@ button:hover {
     cursor: pointer;
     opacity: .9;
     background-color: #cb0f33;
+}
+
+.form-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 5px;
+    /*box-shadow: 0px 0px 10px rgba(0,0,0,0.1);*/
+}
+
+.file-input {
+    appearance: none;
+    border: none;
+    background-color: #0494d2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: opacity 1s;
+    /*box-shadow: 0px 0px 5px rgba(0,0,0,0.1);*/
+}
+
+.file-input:hover {
+    opacity: 0.9;
+}
+
+.file-input::-webkit-file-upload-button {
+    appearance: none;
+    background-color: crimson;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: opacity 1s;
+}
+
+.filename {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.file-input::-webkit-file-upload-button:hover {
+    opacity: 0.9;
 }

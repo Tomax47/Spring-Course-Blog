@@ -31,4 +31,6 @@ public class User {
 
     private String confirmed;
     private Role role;
+
+    private String confirmationCode;
 }

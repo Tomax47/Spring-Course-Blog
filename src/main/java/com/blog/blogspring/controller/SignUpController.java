@@ -26,15 +26,18 @@ public class SignUpController {
     }
 
     @PostMapping("/signUp")
-    public String signUp(UserForm form, Model model) {
-        // We have to send the data to the service part, then from there to the repo part
-        System.out.println("USER FORM NUMBER ->"+form.getPhoneNumber());
+    public String signUp(UserForm form) {
+
         UserDto user = signUpService.addUser(form);
 
-        return "redirect:/confirm?phoneNumber=" + user.getPhoneNumber() + "&email=" + user.getEmail();
+        if (form.getPhoneNumber().length() > 1) {
+            return "redirect:/confirm?phoneNumber=" + user.getPhoneNumber() + "&email=" + user.getEmail();
+        }
+
+        return "redirect:/signIn";
     }
 
-    @GetMapping("/confirm")
+    @GetMapping("/sms/confirm")
     public String getAccountConfirmationPage(Model model,
                                              @RequestParam("phoneNumber") String phoneNumber,
                                              @RequestParam("email") String email) {
@@ -45,7 +48,7 @@ public class SignUpController {
         return "account_confirmation";
     }
 
-    @PostMapping("/confirm")
+    @PostMapping("/sms/confirm")
     public String confirmAccount(Model model, @RequestParam("vCode") String vCode,
                                  @RequestParam("code") String code,
                                  @RequestParam("email") String email) {

@@ -19,10 +19,19 @@
     <label>Password : </label>
     <input name="password">
 
-    <label>Phone Number : </label>
-    <input name="phoneNumber">
+    <label>
+        <input type="checkbox" id="confirmBySMS">
+        Confirm by SMS
+    </label>
+
+    <div id="phoneNumberInput" style="display: none;">
+        <label>Phone Number : </label>
+        <input name="phoneNumber">
+    </div>
 
     <input type="submit" value="Register">
 </form>
+
+<script src="/js/signUp.js"></script>
 </body>
 </html>

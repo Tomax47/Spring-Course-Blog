@@ -10,7 +10,7 @@
 <body>
 <h1>Confirm Your Account</h1>
 <p>We have sent the confirmation code to your number, please check your messages!</p>
-<form action="/confirm" method="post">
+<form action="/sms/confirm" method="post">
     <input type="hidden" value="${vCode}" name="code">
     <input type="hidden" value="${email}" name="email">
     <input name="vCode" id="verificationCode" placeholder="Enter the verification code">

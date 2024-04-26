@@ -12,12 +12,15 @@
     <h1>Sign Up Page!</h1>
 </h1>
 
-<form action="signUp" method="post">
+<form action="/signUp" method="post">
     <label>Email : </label>
     <input name="email">
 
     <label>Password : </label>
     <input name="password">
+
+    <label>Phone Number : </label>
+    <input name="phoneNumber">
 
     <input type="submit" value="Register">
 </form>

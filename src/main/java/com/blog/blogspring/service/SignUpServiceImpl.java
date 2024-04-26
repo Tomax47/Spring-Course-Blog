@@ -1,7 +1,9 @@
 package com.blog.blogspring.service;
 
+import com.blog.blogspring.dto.UserDto;
 import com.blog.blogspring.dto.UserForm;
 import com.blog.blogspring.model.Role;
+import com.blog.blogspring.model.State;
 import com.blog.blogspring.model.User;
 import com.blog.blogspring.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +19,37 @@ public class SignUpServiceImpl implements SignUpService {
     @Autowired
     private UserRepo usersRepository;
     @Override
-    public void addUser(UserForm userForm) {
+    public UserDto addUser(UserForm userForm) {
         User user = User.builder()
                 .email(userForm.getEmail())
                 .password(passwordEncoder.encode(userForm.getPassword()))
                 .firstName(userForm.getFirstname())
                 .lastName(userForm.getLastname())
-                .confirmed("CONFIRMED")
+                .confirmed(String.valueOf(State.NOT_CONFIRMED))
+                .phoneNumber(userForm.getPhoneNumber())
                 .role(Role.USER)
                 .build();
-        usersRepository.save(user);
+
+        try {
+            usersRepository.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return UserDto.from(user);
+    }
+
+    @Override
+    public boolean confirmAccount(String email) {
+        User user = usersRepository.findByEmail(email).get();
+
+        System.out.println("USER "+ user.getEmail());
+        if (user != null) {
+            user.setConfirmed("CONFIRMED");
+            usersRepository.save(user);
+            return true;
+        }
+
+        return false;
     }
 }

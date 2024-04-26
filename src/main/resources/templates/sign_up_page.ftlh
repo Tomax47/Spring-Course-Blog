@@ -19,10 +19,12 @@
     <label>Password : </label>
     <input name="password">
 
-    <label>
-        <input type="checkbox" id="confirmBySMS">
-        Confirm by SMS
-    </label>
+    <div>
+        <label>
+            <input type="checkbox" id="confirmBySMS">
+            Confirm by SMS
+        </label>
+    </div>
 
     <div id="phoneNumberInput" style="display: none;">
         <label>Phone Number : </label>

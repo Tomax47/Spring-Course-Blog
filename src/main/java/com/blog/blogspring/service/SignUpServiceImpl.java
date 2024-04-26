@@ -41,8 +41,12 @@ public class SignUpServiceImpl implements SignUpService {
                 .confirmationCode(confirmationCode)
                 .build();
 
-        // Sending the confirmation email for the user
-        mailService.sendEmailForConfirmation(user.getEmail(), user.getConfirmationCode());
+        // Email verification
+        if (user.getPhoneNumber() == null) {
+            // No number has been provided, sending an email verification link
+            mailService.sendEmailForConfirmation(user.getEmail(), user.getConfirmationCode());
+        }
+
         try {
             usersRepository.save(user);
         } catch (Exception e) {

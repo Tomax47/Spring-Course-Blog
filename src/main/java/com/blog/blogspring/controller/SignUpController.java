@@ -31,7 +31,7 @@ public class SignUpController {
         UserDto user = signUpService.addUser(form);
 
         if (form.getPhoneNumber().length() > 1) {
-            return "redirect:/confirm?phoneNumber=" + user.getPhoneNumber() + "&email=" + user.getEmail();
+            return "redirect:/sms/confirm?phoneNumber=" + user.getPhoneNumber() + "&email=" + user.getEmail();
         }
 
         return "redirect:/signIn";
